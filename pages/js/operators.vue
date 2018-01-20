@@ -5,7 +5,7 @@
 			<div class="container content">
 				<!-- Begin body -->
 				
-				<p class="title">Logic and Flow</p>
+				<p class="title">Operators</p>
 
 
 			<!-- END BODY -->
@@ -23,7 +23,7 @@
 		
 		data() {
 			return {
-				title: "Logic and Flow"
+				title: "JavaScript Operators"
 			}
 		},
 

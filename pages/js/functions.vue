@@ -15,12 +15,12 @@
 </template>
 
 <script>
-	import banner from '~/components/banner.vue';
 	import editor from '~/components/editor.vue';
-
+	import banner from '~/components/banner.vue';
 
 	export default {
-		components: {banner, editor},
+		components: {editor, banner},
+		
 		data() {
 			return {
 				title: "JavaScript Functions"

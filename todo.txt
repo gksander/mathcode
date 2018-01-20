@@ -2,17 +2,17 @@ Sections:
 
 	- JavaScript
 		* Basics
-print("Hey, alan!");			* What is JavaScript? (Very basic)
-			* Syntax (Rules)
-			* Expressions and Statements
-			* Variables
-			* Operators
+				* What is JavaScript? (Very basic)
+				* Syntax (Rules)
+				* Variables
 		* Data Types
 			* Integers and Floats
 			* Strings (accessing elements, concatenating, etc.)
 			* Arrays (getting/setting, length, sort?, etc.)
 			* Booleans ()
 			* Objects (methods/properties, method notation)
+		* Operators
+			* ...
 		* Functions
 			* Using functions
 			* Defining functions

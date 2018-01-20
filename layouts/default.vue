@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav class='navbar is-transparent {$navClass}'>
+    <nav class='navbar'>
       <div class='navbar-brand'>
         <nuxt-link to='/' class='navbar-item' exact>
           <img src="~/assets/img/logo.svg" />&nbsp;
@@ -8,8 +8,8 @@
             Home
           </span>
         </nuxt-link>
-        <nuxt-link class="navbar-item" to="/about">
-          About
+        <nuxt-link class="navbar-item" to="/start">
+          Get Started
         </nuxt-link>
         <span class='navbar-burger' @click='menu=!menu' :class="{'is-active':menu}">
           <span></span>
@@ -48,21 +48,22 @@
       return {
         menu: false,
         items: [
-          {
-            title: "Intro",
-            items: [
-              {title: "What is coding?", href: "/intro/what-is-coding"},
-              {title: "Variables", href: "/intro/variables"},
-              {title: "Functions", href: "/intro/functions"},
-              {title: "Math Capabilities", href: "/intro/math"},
-              {title: "Intro Activities", href: "/intro/activities"}
-            ]
-          },
+          // {
+          //   title: "Intro",
+          //   items: [
+          //     {title: "What is coding?", href: "/intro/what-is-coding"},
+          //     {title: "Variables", href: "/intro/variables"},
+          //     {title: "Functions", href: "/intro/functions"},
+          //     {title: "Math Capabilities", href: "/intro/math"},
+          //     {title: "Intro Activities", href: "/intro/activities"}
+          //   ]
+          // },
           {
             title: "JavaScript",
             items: [
               {title: "Basics", href: "/js/basics"},
               {title: "Data Types", href: "/js/data-types"},
+              {title: "Operators", href: "/js/operators"},
               {title: "Functions", href: "/js/functions"},
               {title: "Logic and Flow", href: "/js/logic-flow"},
               {title: "Loops", href: "/js/loops"},
@@ -135,6 +136,7 @@
       display: flex
       align-items: center
       justify-content: center
+      overflow-y: hidden
 
   #particles-js
       position: absolute

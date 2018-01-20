@@ -40,7 +40,7 @@ module.exports = {
   */
   build: {
     vender: ['ace']
-  },
+  }
 
   // plugins: [
   //   {src: './components/editor.vue', ssr:false}

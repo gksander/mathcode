@@ -1,5 +1,5 @@
 <template>
-	<div class="box editor-box" style="margin:10px auto 22.5px auto;">
+	<div class="box editor-box" style="margin:10px auto 22.5px auto;" :style="addedStyle || {}">
 		<div class="field has-addons">
 			<p class="control">
 				<a class="button is-outlined" :class="{'is-primary': showEditor}" @click="showEditor = !showEditor">Editor</a>
@@ -28,7 +28,7 @@
 
 <script>
 	export default {
-		props: ['height'],
+		props: ['height', 'addedStyle'],
 		data() {
 			return {
 				showEditor: true,
@@ -57,7 +57,6 @@
 					evalString = Babel.transform(evalString, {presets: ['es2015']}).code;
 					eval(evalString);
 				} catch(e){
-					console.log(e);
 					that.output.push(`<span style='color:red'>${e}</span>`);
 				}
 
