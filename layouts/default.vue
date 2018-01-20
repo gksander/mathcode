@@ -57,6 +57,16 @@
               {title: "Math Capabilities", href: "/intro/math"},
               {title: "Intro Activities", href: "/intro/activities"}
             ]
+          },
+          {
+            title: "JavaScript",
+            items: [
+              {title: "Basics", href: "/js/basics"},
+              {title: "Data Types", href: "/js/data-types"},
+              {title: "Functions", href: "/js/functions"},
+              {title: "Logic and Flow", href: "/js/logic-flow"},
+              {title: "Loops", href: "/js/loops"},
+            ]
           }
         ]
       }

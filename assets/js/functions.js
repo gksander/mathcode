@@ -40,6 +40,12 @@ window.mod = function(x, n = 1) {
 	return x % 1;
 }
 window.sqrt = Math.sqrt;
+window.nroot = function(x, n) {
+	return Math.pow(x, 1/n);
+}
+window.hey = function(){
+	return 'hey';
+}
 
 
 // Factorial

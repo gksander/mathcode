@@ -35,7 +35,7 @@
 				showOutput: true,
 
 				editor: Object,
-				output: ['hey']
+				output: []
 			}
 		},
 

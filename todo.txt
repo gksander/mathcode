@@ -1,0 +1,27 @@
+Sections:
+
+	- JavaScript
+		* Basics
+print("Hey, alan!");			* What is JavaScript? (Very basic)
+			* Syntax (Rules)
+			* Expressions and Statements
+			* Variables
+			* Operators
+		* Data Types
+			* Integers and Floats
+			* Strings (accessing elements, concatenating, etc.)
+			* Arrays (getting/setting, length, sort?, etc.)
+			* Booleans ()
+			* Objects (methods/properties, method notation)
+		* Functions
+			* Using functions
+			* Defining functions
+		* Logic and flow
+			* ...
+		* Loops
+			* ...
+
+TODO: 
+	- Make sure functions.js is getting run through Babel!!!
+	- Add a section about comments to "About"
+	- 

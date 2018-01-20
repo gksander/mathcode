@@ -39,6 +39,9 @@ window.mod = function(x, n = 1) {
   return x % 1;
 }
 window.sqrt = Math.sqrt;
+window.nroot = function(x, n) {
+  return Math.pow(x, 1/n);
+}
 
 
 // Factorial
@@ -51,4 +54,12 @@ window.factorial = function(x, n) {
 // Rounding function
 window.round = function(x, n = 0) {
   return Math.round((x*Math.pow(10, n)))/(Math.pow(10, n));
+}
+
+window.renderMath = function(){
+  renderMathInElement(document.body, {
+    delimiters: [
+      {left: "\\(", right: "\\)", display: false}
+    ]
+  });
 }
