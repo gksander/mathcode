@@ -7,7 +7,7 @@
 				<p>
 					This is site was written by Grant Sander, and is an extension of <a href="https://cosmalearning.com" target="_blank">cosmalearning.com</a>. It was developed to support learners in exploring both math <em>and</em> programming. The site consists of various tutorials, examples, and exercises, ranging from basic programming concepts to some sophisticated mathematical ideas. Througout the site you will see editors that look like this:
 				</p>
-				<editor height="80px">print("I'm an editor!");
+				<editor height="80px" editorID="start/simpleprogram">print("I'm an editor!");
 print("You can edit me, and run the code.");</editor>
 				<p>
 					You can edit the code in the code-editor, and then press the "Run Code" button to run your code. The output of your code will be shown to the right (or below) the code editor. <em>You can also press Ctrl + Enter (or Cmd + Enter on Mac) to run your code.</em>

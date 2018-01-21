@@ -6,10 +6,10 @@ Sections:
 				* Syntax (Rules)
 				* Variables
 		* Data Types
-			* Integers and Floats
-			* Strings (accessing elements, concatenating, etc.)
-			* Arrays (getting/setting, length, sort?, etc.)
-			* Booleans ()
+				* Integers and Floats
+				* Strings (accessing elements, concatenating, etc.)
+				* Arrays (getting/setting, length, sort?, etc.)
+				* Booleans ()
 			* Objects (methods/properties, method notation)
 		* Operators
 			* ...

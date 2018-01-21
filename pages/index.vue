@@ -4,7 +4,7 @@
       <div id="particles-js"></div>
     </div>
     <div class="full-background">
-      <editor :addedStyle="{'width': '950px', 'max-width': '90%'}">//COSma Learning, INC.
+      <editor :addedStyle="{'width': '950px', 'max-width': '90%'}" editorID="home">//COSma Learning, INC.
 print("Math and programming?!");
 print("You're in the right place!");
 
