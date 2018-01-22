@@ -1,3 +1,14 @@
+Array.prototype.toString = function(){
+  var os = "[";
+  var n = this.length;
+  for (var i = 0; i < this.length; i++){
+    os += this[i].toString();
+    if (i !== n-1) os += ", ";
+  }
+  os += "]";
+  return os;
+}
+
 // CONSTANTS
 window.pi = window.PI = Math.PI;
 window.e = Math.E;

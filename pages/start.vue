@@ -24,11 +24,11 @@ print("You can edit me, and run the code.");</editor>
 				<p>
 					<em>Coding</em>, or <em>programming</em>, is the process of writing computer programs. Computer programs are basically just commands telling a computer what to do. Let's look at a simple example of a program.
 				</p>
-				<editor height="50px">print("I'm a program!");</editor>
+				<editor height="50px" editorID="start/imaprogram">print("I'm a program!");</editor>
 				<p>
 					In the code editor above, there is a single line: <code>print("I'm a program!");</code>. This line of code is just telling the computer, "print the statement 'I'm a program!' to the output". We are just telling the computer what to do in a language that it can understand. When looking at a program, the computer will generally work its way down the program, executing one line at a time. For example, consider the following program:
 				</p>
-				<editor height="80px">print("Hello, world!");
+				<editor height="80px" editorID="start/programlines">print("Hello, world!");
 print("It's a great day to be alive!");
 print("It's a great day to learn about coding!");</editor>
 				<p>
@@ -43,7 +43,7 @@ print("It's a great day to learn about coding!");</editor>
 				<p>
 					JavaScript has some built-in math operators, such as addition (+), subtraction (-), multiplication (*), and division (/). You can also use parentheses for grouping, like in math. The editor below shows some these operators in use.
 				</p>
-				<editor height="100px">print(3 + 5);
+				<editor height="100px" editorID="start/simplemathoperators">print(3 + 5);
 print(10/2);
 print(5 + (3*2));
 print(6/(2+1));</editor>
@@ -54,7 +54,7 @@ print(6/(2+1));</editor>
 				<p>
 					To make this site more fun, mathematically, I have added a handful of extra math capabilities. For example, I have added some useful mathematical functions and constants - including the constant \(e\) and \(\pi\), as well as trigonometric and logarithmic functions. The editor below shows some of these math functions. It's okay if you don't know what all of them are, just be aware that you have some additional math functions available.
 				</p>
-				<editor height="350px">// Constants
+				<editor height="350px" editorID="start/somemathfunctions">// Constants
 print( e );
 print( pi );
 

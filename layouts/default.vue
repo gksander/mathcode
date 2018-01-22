@@ -63,7 +63,7 @@
             items: [
               {title: "Basics", href: "/js/basics"},
               {title: "Data Types", href: "/js/data-types"},
-              {title: "Operators", href: "/js/operators"},
+              {title: "Operators and Methods", href: "/js/operators"},
               {title: "Functions", href: "/js/functions"},
               {title: "Logic and Flow", href: "/js/logic-flow"},
               {title: "Loops", href: "/js/loops"},
@@ -97,7 +97,7 @@
 
   .editor-box
       margin-top: 10px
-      max-width: 950px
+      // max-width: 950px
   // Badges
   @mixin badge($size)
       background-color: rgba(255,255,255, 1)

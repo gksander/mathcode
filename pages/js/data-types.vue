@@ -38,7 +38,7 @@ print(z);</editor>
 				<p>
 					JavaScript "strings" are used for storing text data (such as words and sentences), and consist of zero or more characters inside of quotes (single or double!). For example, <code>"John Doe"</code> and <code>'hello'</code> are both examples of strings. Strings are great for holding sentences or text information, and are used very regularly in web development and other computer fields. The editor below shows a couple variables that have string values.
 				</p>
-				<editor height="120px">var yourName = "John Doe";
+				<editor height="120px" editorID="js/data-types/strings">var yourName = "John Doe";
 var sayHello = 'Hello!';
 
 print(yourName);
@@ -46,7 +46,7 @@ print(sayHello);</editor>
 				<p>
 					Strings can also be wrapped inside of "backticks" which is the key at the top-left of your keyboard that looks like a backwards apostrophe. The expression <code>`John Doe`</code> has the same value as <code>"John Doe"</code>. It seems like we have a lot of options for creating strings, but this last option is perhaps the most useful! Using backticks, we can put variable values into our strings. If we want to put the variable <code>x</code> in a string, wesimply place <code>${x}</code> where we want <code>x</code> to be in the string. The editor below shows this in action!
 				</p>
-				<editor height="80px">var yourName = "John Doe";
+				<editor height="80px" editorID="js/data-types/stringliterals">var yourName = "John Doe";
 
 print(`Hello, ${yourName}!`);</editor>
 				<p>
@@ -64,7 +64,7 @@ print(`Hello, ${yourName}!`);</editor>
 				<p>
 					"Arrays" are like ordered lists of data. Suppose you have a list of all of the ingredients you need to make a sandwich. You could store these ingredient names in an <em>array</em>. The editor below actually shows this!
 				</p>
-				<editor height="80px">var ingredients = ["Bread", "Ham", "Cheese"];
+				<editor height="80px" editorID="js/data-types/definearray">var ingredients = ["Bread", "Ham", "Cheese"];
 
 print(ingredients);</editor>
 				<p>
@@ -78,7 +78,7 @@ print(ingredients);</editor>
 				<p>
 					To access the elements of an array, we again use square brackets - but we put them <em>after</em> the array's variable name. For example, <code>ingredients[0]</code> will get the 0<sup>th</sup> element of the <code>ingredients</code> array. Do you remember what ingredient that is? The editor below shows this in action.
 				</p>
-				<editor height="120px">var ingredients = ["Bread", "Ham", "Cheese"];
+				<editor height="120px" editorID="js/data-types/accessarray">var ingredients = ["Bread", "Ham", "Cheese"];
 
 print( ingredients[0] );
 print( ingredients[1] );
@@ -86,7 +86,7 @@ print( ingredients[2] );</editor>
 				<p>
 					To <em>change</em> the value of an array element, we use similar syntax. We specify what array element we would like to change, and then we tell the computer what value to give it. Suppose that you'd like turkey on your sandwich, instead of ham. The editor below shows how you can change the <code>ingredients</code> array to show this.
 				</p>
-				<editor height="120px">var ingredients = ["Bread", "Ham", "Cheese"];
+				<editor height="120px" editorID="js/data-types/setArrayElement">var ingredients = ["Bread", "Ham", "Cheese"];
 print(ingredients);
 
 // Now change to turkey
@@ -126,7 +126,7 @@ print(ingredients);</editor>
 					<li>Define a variable <code>message</code> and set it equal to a string that tells the world how old you are. For example, if you are 22 then the string should say "Today I am 22!". (Hint: you might have to use <code>${myAge}</code> somewhere in your code.)</li>
 					<li>Print the <code>message</code> variable to the output using the <code>print()</code> command.</li>
 				</ol>
-				<editor height="120px"></editor>
+				<editor height="120px" editorID="js/data-types/ageActivity"></editor>
 
 				<p class="title">Activity: Favorite Numbers</p>
 				<p>
@@ -137,7 +137,7 @@ print(ingredients);</editor>
 					<li>Print the first element in the <code>favoriteNumbers</code> array to the output using the <code>print()</code> command.</li>
 					<li>Print the last element in the <code>favoriteNumbers</code> array to the output using the <code>print()</code> command.</li>
 				</ol>
-				<editor height="120px"></editor>
+				<editor height="120px" editorID="js/data-types/favoriteNumberActivity"></editor>
 
 
 			</div>

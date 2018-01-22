@@ -53,7 +53,7 @@
 				that.output = [];
 				// Functions to use in run method
 				function print(line) {
-					that.output.push(line);
+					that.output.push(line.toString());
 				}
 
 
@@ -103,8 +103,12 @@
 
 		// Before mounting...
 		beforeMount() {
-			// Get code from slot, set it as default code
-			this.defaultCode = this.$slots.default[0].text;
+			try {
+				// Get code from slot, set it as default code
+				this.defaultCode = this.$slots.default[0].text;
+			} catch(e) {
+				this.defaultCode = "";
+			}
 			// Check for id...
 			let eID = this.$props.editorID;
 			// If there's an eID, try to pull from localStorage
