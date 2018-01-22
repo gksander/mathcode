@@ -5,7 +5,7 @@
   "author": "Grant Sander <gksander93@gmail.com>",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "HOST=0.0.0.0 PORT=3333 nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
@@ -13,7 +13,7 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "nuxt": "^1.0.0"
+    "nuxt": "^1.1.1"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",

@@ -39,10 +39,8 @@ module.exports = {
   ** Build configuration
   */
   // build: {
-  //   // vender: ['ace']
+  //   babel: {
+  //     presets: ['es2015']
+  //   }
   // }
-
-  // plugins: [
-  //   {src: './components/editor.vue', ssr:false}
-  // ]
 }
