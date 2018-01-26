@@ -1,57 +1,23 @@
 <template>
   <div>
-    <nav class='navbar is-fixed-top is-dark'>
-      <div class='navbar-brand'>
-        <nuxt-link to='/' class='navbar-item' exact>
-          <img src="~/assets/img/logo.svg" />&nbsp;
-          <span>
-            Home
-          </span>
-        </nuxt-link>
-        <a class="navbar-item" @click="$store.commit('toggleEditor')" v-html="editorShown ? 'Hide Editor' : 'Show Editor'"></a>
-        <span class='navbar-burger' @click='menu=!menu' :class="{'is-active':menu}">
-          <span></span>
-          <span></span>
-          <span></span>
-        </span>
-      </div>
-      <div class='navbar-menu' :class="{'is-active':menu}">
-        <div class='navbar-start'>
-          <div class="navbar-item has-dropdown is-hoverable" v-for="item in items" :key="item.index">
-            <a class="navbar-link"> {{ item.title }}</a>
-            <div class="navbar-dropdown is-boxed">
-              <nuxt-link 
-                class="navbar-item"
-                v-for="subItem in item.items"
-                :key="subItem.index"
-                :to="subItem.href"
-                router-link-active="is-active"
-              >
-                {{subItem.title}}
-              </nuxt-link>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
-
+    <navbar></navbar>
     <!-- Sidebar -->
     <div id="sidebar" :class="{'editorShown': editorShown}">
+      <div class="tabs is-fullwidth" style="margin-bottom:0px">
+        <ul>
+          <li :class="{'is-active':mode=='default'}" @click="changeMode('default')">
+            <a>Default</a>
+          </li>
+          <li :class="{'is-active':mode=='saved'}" @click="changeMode('saved')">
+            <a>Saved</a>
+          </li>
+          <li @click="runCode()"><a>Run</a></li>
+        </ul>
+      </div>
       <div id="editor" ref="editor" style="width:100%; height:50%"></div>
 
       <div id="output">
-        <div class="tabs is-fullwidth">
-          <ul>
-            <li :class="{'is-active':mode=='default'}" @click="changeMode('default')">
-              <a>Default</a>
-            </li>
-            <li :class="{'is-active':mode=='saved'}" @click="changeMode('saved')">
-              <a>Saved</a>
-            </li>
-            <li @click="runCode()"><a>Run</a></li>
-          </ul>
-        </div>
-
+        <p class="title is-4 outputTitle">Output</p>
         <div v-for="(out,i) in output" :key="i" class="output-line">
           <span>[{{i+1}}]</span>&nbsp;<span v-html="out"></span>
         </div>
@@ -92,32 +58,19 @@
 </template>
 
 <script>
+  import navbar from '~/components/navbar.vue';
+
   // Export object
   export default {
+    components: {navbar},
+
     data() {
       return {
         // Editor stuff
         editor: Object,
         output: [],
         mode: 'default',
-        savedCode: "",
-
-
-        // Menu stuff
-        menu: false,
-        items: [
-          {
-            title: "JavaScript",
-            items: [
-              {title: "Basics", href: "/js/basics"},
-              {title: "Data Types", href: "/js/data-types"},
-              {title: "Operators and Methods", href: "/js/operators"},
-              {title: "Functions", href: "/js/functions"},
-              {title: "Logic and Flow", href: "/js/logic-flow"},
-              {title: "Loops", href: "/js/loops"},
-            ]
-          }
-        ]
+        // savedCode: "",
       }
     },
 
@@ -132,6 +85,10 @@
       defaultCode() {
         return this.$store.state.defaultCode;
       },
+      savedCode() {
+        return this.$store.state.store_savedCode;
+      },
+
       count() {
         return this.$store.state.count;
       },
@@ -145,12 +102,12 @@
       count(newCount, oldCount) {
         try {
           // Change saved code.
-          let sc = localStorage.getItem(`cosma/${this.eID}`);
-          if (sc !== null) {
-            this.savedCode = sc;
-          } else {
-            this.savedCode = "";
-          }
+          // let sc = localStorage.getItem(`cosma/${this.eID}`);
+          // if (sc !== null) {
+          //   this.savedCode = sc;
+          // } else {
+          //   this.savedCode = "";
+          // }
 
           // Change editor to default, set code to default code.
           this.mode = 'default';
@@ -185,7 +142,7 @@
           */
           // If not default code...
           if (evalString != this.defaultCode) {
-            this.savedCode = evalString;
+            // this.savedCode = evalString;
             if(this.eID) {
               try {
                 localStorage.setItem(`cosma/${this.eID}`, evalString);
@@ -193,6 +150,7 @@
             } else {
               localStorage.setItem(`cosma/default`, evalString);
             }
+            this.$store.commit('pullSavedCode');
             
             // If in default mode, change to saved mode
             if (this.mode == "default") {
@@ -223,11 +181,14 @@
 
 
     mounted() {
+      this.$store.commit('pullSavedCode');
+
       let created = false;
       let int = setInterval(() => {
         try {
           this.editor = ace.edit(this.$refs.editor);
           this.editor.setTheme("ace/theme/ambiance");
+          // this.editor.setTheme("ace/theme/cobalt");
           this.editor.session.setMode("ace/mode/javascript");
           this.editor.getSession().setTabSize(2);
           this.$refs.editor.style.fontSize = "16px";
@@ -265,6 +226,7 @@
 
   $primary: #5d3f9e
   $blue: $primary
+  $tabs-border-bottom-width: 3px
 
   @import "../node_modules/bulma/bulma"
   @import "../node_modules/bulma/sass/components/navbar.sass"
@@ -278,6 +240,13 @@
     p.title
       margin-bottom: 8px !important
       border-bottom: 2px solid $grey-dark
+    .activities-title
+      background-color: $primary
+      padding: 20px
+      color: white
+      font-size: 2.3em
+      margin-left: -25px
+      padding-left: 25px
   
   // Variables for layout
   $sb-width: 450px
@@ -292,19 +261,26 @@
     width: $sb-width
     max-width: 85%
     z-index: 2
+    overflow-y: auto
     background-color: white
+    transition: right 500ms
     &.editorShown
       right: 0px
     .output-line
       padding-left: 8px
       span:first-child
         color: $primary
+    .outputTitle
+      text-align: center
+      border-bottom: 2px solid $grey-dark
+      margin-bottom: 10px
+      margin-top: 8px
 
   #content
     z-index: -4
     margin-top: $header-height
+    transition: margin-right 500ms
     &.editorShown
-      // right: $sb-width
       margin-right: $sb-width
 
   // Responsiveness

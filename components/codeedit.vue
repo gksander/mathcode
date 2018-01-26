@@ -1,6 +1,9 @@
 <template>
 	<div>
-		<a class="button is-primary is-fullwidth" @click="changeCode()" style="margin-bottom:15px">See code</a>
+		<pre
+			:class="{'is-active': $store.state.eID == editorID}"
+			@click="changeCode()"
+		><slot></slot></pre>
 	</div>
 </template>
 
@@ -25,3 +28,19 @@
 		}
 	}
 </script>
+
+<style lang="sass" scoped>
+	pre
+		color: white
+		cursor: pointer
+		margin-bottom: 1em
+		background-color: #202020
+		padding: 10px
+		border-radius: 5px
+		&.is-active
+			background-color: #202020
+			color: #6aef6a
+		&:hover:not(.is-active)
+			color: #5fdeed
+
+</style>

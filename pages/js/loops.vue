@@ -1,25 +1,14 @@
 <template>
 	<div>
-		<banner :title="title"></banner>
-		<section class="section">
-			<div class="container content">
-				<!-- Begin body -->
-				
-				<p class="title">Loops</p>
-
-
-			<!-- END BODY -->
-			</div>
-		</section>
+		<p class="title">Loops</p>
 	</div>
 </template>
 
 <script>
-	import editor from '~/components/editor.vue';
-	import banner from '~/components/banner.vue';
+	import codeedit from '~/components/codeedit.vue';
 
 	export default {
-		components: {editor, banner},
+		components: {codeedit},
 		
 		data() {
 			return {
@@ -31,6 +20,10 @@
 			return {
 				title: this.title
 			}
+		},
+
+		mounted() {
+			this.$store.commit('changeTitle', this.title);
 		}
 	}
 

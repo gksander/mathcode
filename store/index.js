@@ -6,7 +6,7 @@ const createStore = () => {
     state: {
       editorShown: true,
       defaultCode: "",
-      savedCode: "",
+      store_savedCode: "",
       count: 0,
       title: "COSma Coding",
       eID: ""
@@ -22,7 +22,10 @@ const createStore = () => {
       },
 
       changeDefaultCode (state, code) {
+        // Change the default code
         state.defaultCode = code;
+        this.commit('pullSavedCode');
+        // Increment
         state.count++;
       },
 
@@ -32,6 +35,26 @@ const createStore = () => {
 
       changeEID (state, eID) {
         state.eID = eID;
+      },
+
+      pullSavedCode (state) {
+        // Try to pull saved code
+        if (!state.eID) {
+          let sc = localStorage.getItem(`cosma/default`);
+          if (sc) {
+            state.store_savedCode = sc;
+          } else {
+            state.store_savedCode = "print('No Saved Code');";
+          }
+        }
+        else {
+          let sc = localStorage.getItem(`cosma/${state.eID}`);
+          if (sc) {
+            state.store_savedCode = sc;
+          } else {
+            state.store_savedCode = "print('No Saved Code');";
+          }
+        }
       }
     }
 

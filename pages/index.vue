@@ -3,12 +3,12 @@
 
 		<p class="title">What is this site?</p>
 		<p>
-			This is site was written by Grant Sander, and is an extension of <a href="https://cosmalearning.com" target="_blank">cosmalearning.com</a>. It was developed to support learners in exploring both math <em>and</em> programming. The site consists of various tutorials, examples, and exercises, ranging from basic programming concepts to some sophisticated mathematical ideas. Througout the site you will see editors that look like this:
+			This is site was written by Grant Sander, and is an extension of <a href="https://cosmalearning.com" target="_blank">cosmalearning.com</a>. It was developed to support learners in exploring both math <em>and</em> programming. The site consists of various tutorials, examples, and exercises, ranging from basic programming concepts to some sophisticated mathematical ideas. Througout the site you will see code snippets that look like this:
 		</p>
 		<codeedit editorID="start/simpleprogram">print("I'm an editor!");
 print("You can edit me, and run the code.");</codeedit>
 		<p>
-			You can edit the code in the code-editor, and then press the "Run Code" button to run your code. The output of your code will be shown to the right (or below) the code editor. <em>You can also press Ctrl + Enter (or Cmd + Enter on Mac) to run your code.</em>
+			Click on the code snippet to pull open the code in the editor on the right-side of the screen. 			You can edit the code in the code-editor, and then press the "Run" button to run your code. The output of your code will be shown below the code editor. <em>You can also press Ctrl + Enter (or Cmd + Enter on Mac) to run your code.</em>
 		</p>
 		<p>
 			The code editors are running JavaScript code. JavaScript is a programming language that nearly all websites use -- it is the code that runs in your web browser. So, anytime you are using an interactive website, chances are there is some JavaScript running behind the scenes. In this site you will also have access to some functionality that is beyond basic JavaScript to make the exercises more interesting.

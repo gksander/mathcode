@@ -96,7 +96,7 @@ print(ingredients);</codeedit>
 			There are two more <em>very</em> important data-types in JavaScript (and most programming languages): <em>functions</em> and <em>objects</em>. These types of data are a little more sophisticated that the ones we just covered, so they will be covered in their own pages.
 		</p>
 
-		<p class="title">ACTIVITIES</p>
+		<p class="activities-title">Activities</p>
 
 		<p class="title">Activity: Printing Your Age</p>
 		<p>
@@ -107,7 +107,7 @@ print(ingredients);</codeedit>
 			<li>Define a variable <code>message</code> and set it equal to a string that tells the world how old you are. For example, if you are 22 then the string should say "Today I am 22!". (Hint: you might have to use <code>${myAge}</code> somewhere in your code.)</li>
 			<li>Print the <code>message</code> variable to the output using the <code>print()</code> command.</li>
 		</ol>
-		<codeedit editorID="js/data-types/ageActivity"></codeedit>
+		<codeedit editorID="js/data-types/ageActivity">print('Your code here');</codeedit>
 
 		<p class="title">Activity: Favorite Numbers</p>
 		<p>
@@ -118,7 +118,7 @@ print(ingredients);</codeedit>
 			<li>Print the first element in the <code>favoriteNumbers</code> array to the output using the <code>print()</code> command.</li>
 			<li>Print the last element in the <code>favoriteNumbers</code> array to the output using the <code>print()</code> command.</li>
 		</ol>
-		<codeedit editorID="js/data-types/favoriteNumberActivity"></codeedit>
+		<codeedit editorID="js/data-types/favoriteNumberActivity">print('Your code here');</codeedit>
 
 	</div>
 </template>
