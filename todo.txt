@@ -25,3 +25,7 @@ TODO:
 	- Make sure functions.js is getting run through Babel!!!
 	- Add a section about comments to "About"
 	- 
+
+REBUILD:
+	- Saving code to localstorage...
+	- Activities banner...

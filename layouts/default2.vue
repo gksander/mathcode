@@ -8,7 +8,9 @@
             Home
           </span>
         </nuxt-link>
-        <a class="navbar-item" @click="$store.commit('toggleEditor')" v-html="editorShown ? 'Hide Editor' : 'Show Editor'"></a>
+        <a class="navbar-item" @click="$store.commit('toggleEditor')">
+          {{editorShown ? 'Hide' : 'Show'}} Editor
+        </a>
         <span class='navbar-burger' @click='menu=!menu' :class="{'is-active':menu}">
           <span></span>
           <span></span>
@@ -42,10 +44,10 @@
       <div id="output">
         <div class="tabs is-fullwidth">
           <ul>
-            <li :class="{'is-active':mode=='default'}" @click="changeMode('default')">
+            <li :class="{'is-active':mode=='default'}" @click="mode='default'">
               <a>Default</a>
             </li>
-            <li :class="{'is-active':mode=='saved'}" @click="changeMode('saved')">
+            <li :class="{'is-active':mode=='saved'}" @click="mode='saved'">
               <a>Saved</a>
             </li>
             <li @click="runCode()"><a>Run</a></li>
@@ -61,27 +63,6 @@
 
     <!-- Content -->
     <div id="content" :class="{'editorShown': editorShown}">
-
-      <section class="hero is-primary" style="position:relative;">
-        <div id="particles-js" style="position:absolute; left:0; right:0; top:0; bottom:0"></div>
-        <div class="hero-body">
-          <!-- <div class="container"> -->
-            <div class="columns is-vcentered">
-              <div class="column is-8">
-                <p class="title" v-html="title"></p>
-                <p class="subtitle">COSma Coding</p>
-              </div>
-              <div class="column has-text-centered">
-                <div class="banner-badge">
-                  <img src="~/assets/img/logo.svg" alt="Logo" width="50px">
-                </div>
-                <p class="title is-5">COSma Learning</p>
-              </div>
-            </div>
-          <!-- </div> -->
-        </div>
-      </section>
-
       <section class="section">
         <div class="content">
           <nuxt/>
@@ -100,8 +81,6 @@
         editor: Object,
         output: [],
         mode: 'default',
-        savedCode: "",
-
 
         // Menu stuff
         menu: false,
@@ -125,41 +104,17 @@
       editorShown() {
         return this.$store.state.editorShown;
       },
-      eID () {
-        return this.$store.state.eID;
-      },
-
       defaultCode() {
         return this.$store.state.defaultCode;
-      },
-      count() {
-        return this.$store.state.count;
-      },
-      title() {
-        return this.$store.state.title
       }
     },
 
     watch: {
-      // When button is clicked
-      count(newCount, oldCount) {
+      defaultCode(newCode, oldCode) {
         try {
-          // Change saved code.
-          let sc = localStorage.getItem(`cosma/${this.eID}`);
-          if (sc !== null) {
-            this.savedCode = sc;
-          } else {
-            this.savedCode = "";
-          }
-
-          // Change editor to default, set code to default code.
-          this.mode = 'default';
-          this.editor.setValue(this.$store.state.defaultCode, -1);
-          this.$store.commit('showEditor');
+          this.editor.setValue(newCode, -1);
           this.runCode();
-
-
-        } catch(e) {}
+        } catch(e) {console.log(e);}
       }
     },
 
@@ -184,38 +139,25 @@
           ** Handle saving code to local storage
           */
           // If not default code...
-          if (evalString != this.defaultCode) {
-            this.savedCode = evalString;
-            if(this.eID) {
-              try {
-                localStorage.setItem(`cosma/${this.eID}`, evalString);
-              } catch(e) {}
-            } else {
-              localStorage.setItem(`cosma/default`, evalString);
-            }
-            
-            // If in default mode, change to saved mode
-            if (this.mode == "default") {
-              this.changeMode('saved');
-            }
-            // Try to save the code to localStorage
-            
-          }
+          // if (evalString != this.defaultCode) {
+          //   this.savedCode = evalString;
+          //   // If in default mode, change to saved mode
+          //   if (this.mode == "default") {
+          //     this.changeMode('saved');
+          //   }
+          //   // Try to save the code to localStorage
+          //   if(this.eID) {
+          //     try {
+          //       localStorage.setItem(`cosma/${this.eID}`, this.savedCode);
+          //     } catch(e) {}
+          //   } 
+          // }
+
 
           evalString = Babel.transform(evalString, {presets: ['es2015']}).code;
           eval(evalString);
         } catch(e){
           that.output.push(`<span style='color:red'>${e}</span>`);
-        }
-      },
-
-      changeMode(mode) {
-        if (mode == 'default') {
-          this.mode = "default";
-          this.editor.setValue(this.defaultCode, -1);
-        } else {
-          this.mode = "saved";
-          this.editor.setValue(this.savedCode, -1);
         }
       }
     },
@@ -227,7 +169,7 @@
       let int = setInterval(() => {
         try {
           this.editor = ace.edit(this.$refs.editor);
-          this.editor.setTheme("ace/theme/ambiance");
+          this.editor.setTheme("ace/theme/solarized_light");
           this.editor.session.setMode("ace/mode/javascript");
           this.editor.getSession().setTabSize(2);
           this.$refs.editor.style.fontSize = "16px";
@@ -248,8 +190,6 @@
           clearInterval(int);
         }
       }, 200);
-
-      particleBackground();
     }
 
   }
@@ -295,10 +235,6 @@
     background-color: white
     &.editorShown
       right: 0px
-    .output-line
-      padding-left: 8px
-      span:first-child
-        color: $primary
 
   #content
     z-index: -4
@@ -310,33 +246,10 @@
   // Responsiveness
   @media screen and (max-width: $breakwidth)
     #sidebar
-      box-shadow: -2px 0px 5px black
+      // background-color: blue
     #content
       margin-right: 0px
       &.editorShown
         margin-right: 0px
-
-
-  // Badges
-  @mixin badge($size)
-      background-color: rgba(255,255,255, 1)
-      width: $size
-      height: $size
-      overflow-x: visible
-      display: flex
-      align-items: center
-      justify-content: center
-      margin: auto
-      border-radius: 100%
-      border: 1px solid rgb(220,220,220)
-      box-shadow: 0px 0px 8px black
-      img
-          width: 88%
-  .home-badge
-      @include badge(100px)
-      margin-bottom: 20px
-  .banner-badge
-      @include badge(80px)
-      margin-bottom: 8px
 
 </style>

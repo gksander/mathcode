@@ -155,6 +155,10 @@
 				}
 			}, 200);
 
+		},
+
+		beforeDestroy() {
+			this.editor.destroy();
 		}
 	}
 </script>
