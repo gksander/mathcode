@@ -54,6 +54,9 @@ window.nroot = function(x, n) {
   return Math.pow(x, 1/n);
 }
 
+window.min = Math.min;
+window.max = Math.max;
+
 
 // Factorial
 window.factorial = function(x, n) {
@@ -67,10 +70,17 @@ window.round = function(x, n = 0) {
   return Math.round((x*Math.pow(10, n)))/(Math.pow(10, n));
 }
 
+window.isPrime = function(num) {
+  for(var i = 2; i < num; i++)
+    if(num % i === 0) return false;
+  return num !== 1;
+}
+
 window.renderMath = function(){
   renderMathInElement(document.body, {
     delimiters: [
-      {left: "\\(", right: "\\)", display: false}
+      {left: "\\(", right: "\\)", display: false},
+      {left: "\\[", right: "\\]", display: true}
     ]
   });
 }

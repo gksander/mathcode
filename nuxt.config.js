@@ -20,6 +20,7 @@ module.exports = {
       {src: 'https://unpkg.com/babel-standalone@6/babel.min.js'},
       {src: 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.js'},
       {src: 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/contrib/auto-render.min.js'},
+      // {src: 'https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js'},
       {src: '/js/particles.min.js' },
       {src: '/js/particleBackground.js'},
       {src: '/js/functions.js'}

@@ -28,7 +28,7 @@
     <!-- Content -->
     <div id="content" :class="{'editorShown': editorShown}">
 
-      <section class="hero is-primary" style="position:relative;">
+      <section class="hero is-primary" style="position:relative;" id="banner">
         <div id="particles-js" style="position:absolute; left:0; right:0; top:0; bottom:0"></div>
         <div class="hero-body">
           <!-- <div class="container"> -->
@@ -182,12 +182,18 @@
 
     mounted() {
       this.$store.commit('pullSavedCode');
+      try {
+        let cw = document.body.clientWidth;
+        if (cw < 990) {
+          this.$store.commit('hideEditor');
+        }
+      } catch(e){}
 
       let created = false;
       let int = setInterval(() => {
         try {
           this.editor = ace.edit(this.$refs.editor);
-          this.editor.setTheme("ace/theme/ambiance");
+          this.editor.setTheme("ace/theme/monokai");
           // this.editor.setTheme("ace/theme/cobalt");
           this.editor.session.setMode("ace/mode/javascript");
           this.editor.getSession().setTabSize(2);
@@ -240,6 +246,7 @@
     p.title
       margin-bottom: 8px !important
       border-bottom: 2px solid $grey-dark
+      padding-top: 15px
     .activities-title
       background-color: $primary
       padding: 20px
@@ -247,11 +254,17 @@
       font-size: 2.3em
       margin-left: -25px
       padding-left: 25px
+
+  #banner
+    background: none
+  #particles-js
+    background: radial-gradient(circle, $primary 50%, darken($primary,10%), darken($primary,15%))
+    z-index: -2
   
   // Variables for layout
   $sb-width: 450px
   $header-height: 48.75px
-  $breakwidth: $sb-width + 250px
+  $breakwidth: $sb-width + 450px
 
   #sidebar
     position: fixed

@@ -23,9 +23,25 @@ Sections:
 
 TODO: 
 	- Make sure functions.js is getting run through Babel!!!
-	- Add a section about comments to "About"
-	- 
 
-REBUILD:
-	- Saving code to localstorage...
-	- Activities banner...
+
+
+
+Level 1:
+	- Even/Odd numbers
+	- Divisibility
+	- Prime Numbers
+	- Min/Max
+	- Percentages
+	- Sums and Products
+
+Level 2:
+	- Math Functions
+	- Piecewise Functions
+	- Constant Rate of Change
+	- Average Rate of Change
+	- Exponential Growth
+	- APR and Finances
+
+Level 3:
+	- 

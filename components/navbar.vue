@@ -18,7 +18,7 @@
       <div class='navbar-start'>
         <div class="navbar-item has-dropdown is-hoverable" v-for="item in items" :key="item.index">
           <a class="navbar-link"> {{ item.title }}</a>
-          <div class="navbar-dropdown is-boxed">
+          <div class="navbar-dropdown">
             <nuxt-link 
               class="navbar-item"
               v-for="subItem in item.items"
@@ -51,6 +51,12 @@
               {title: "Functions", href: "/js/functions"},
               {title: "Logic and Flow", href: "/js/logic-flow"},
               {title: "Loops", href: "/js/loops"},
+            ]
+          },
+          {
+            title: "Level 1",
+            items: [
+              {title: "Even and Odd", href: "/lvl-1/even-odd"}
             ]
           }
         ]

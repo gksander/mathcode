@@ -21,6 +21,10 @@ const createStore = () => {
         state.editorShown = true;
       },
 
+      hideEditor (state) {
+        state.editorShown = false;
+      },
+
       changeDefaultCode (state, code) {
         // Change the default code
         state.defaultCode = code;

@@ -37,9 +37,10 @@
 		background-color: #202020
 		padding: 10px
 		border-radius: 5px
+		tab-size: 2
 		&.is-active
-			background-color: #202020
-			color: #6aef6a
+			// border-width: 3px
+			color: #55e555
 		&:hover:not(.is-active)
 			color: #5fdeed
 
