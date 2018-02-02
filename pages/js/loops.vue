@@ -18,7 +18,7 @@ while (i &lt;= 10) {
 
 print(sum);</codeedit>
 		<p>
-			In the code above, we start be defining <code>sum = 0</code> and <code>i = 1</code>. We will use <code>sum</code> to keep track of our addition, and <code>i</code> will be what we add to our sum. Line (3) shows the <code>while</code> keyword which is followed by a condition <code>i &lt;= 20</code>. Whenever <code>i &lt;= 10</code>, whatever is inside the curly braces of the while loop will execute. Line (4) adds the value of <code>i</code> to the current value of <code>sum</code>, and then Line (5) increments <code>i</code> by 1. <strong>Do NOT forget to add Line (5)</strong>, otherwise <code>i</code> will constantly be equal to 1, which is always &le;20 and therefore the loop will run forever!
+			In the code above, we start be defining <code>sum = 0</code> and <code>i = 1</code>. We will use <code>sum</code> to keep track of our addition, and <code>i</code> will be what we add to our sum. Line (3) shows the <code>while</code> keyword which is followed by a condition <code>i &lt;= 10</code>. Whenever <code>i &lt;= 10</code>, whatever is inside the curly braces of the while loop will execute. Line (4) adds the value of <code>i</code> to the current value of <code>sum</code>, and then Line (5) increments <code>i</code> by 1. <strong>Do NOT forget to add Line (5)</strong>, otherwise <code>i</code> will constantly be equal to 1, which is always &le;10 and therefore the loop will run forever!
 		</p>
 		<p>
 			When looking at the code above, we can think about it as follows.

@@ -28,12 +28,7 @@ TODO:
 
 
 Level 1:
-	- Even/Odd numbers
-	- Divisibility
-	- Prime Numbers
-	- Min/Max
 	- Percentages
-	- Sums and Products
 
 Level 2:
 	- Math Functions

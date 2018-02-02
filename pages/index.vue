@@ -35,6 +35,11 @@ print("It's a great day to learn about coding!");</codeedit>
 			There are many different types of programming, and <em>many</em> different programming "languages". We won't deal with the differences between these languages and types of languages - instead we will use a particular language, <em>JavaScript</em>, to help us in our exploration of general coding ideas.
 		</p>
 
+		<p class="title">Adding Comments to Code</p>
+		<p>
+			In JavaScript we can add comments to code using <code>//</code> notation. So, <code>// THIS IS A COMMENT</code> will be interpreted as a comment, and the computer will not do anything with it. It's just so that we can add comments to our code so we can remember what we did. You will see these comments regularly throughout the code in this site.
+		</p>
+
 
 		<p class="title">Math Capabilities</p>
 		<p>

@@ -56,7 +56,16 @@
           {
             title: "Level 1",
             items: [
-              {title: "Even and Odd", href: "/lvl-1/even-odd"}
+              {title: "Even and Odd", href: "/lvl-1/even-odd"},
+              {title: "Prime Numbers", href: "/lvl-1/prime-numbers"},
+              {title: "Min and Max", href: "/lvl-1/min-max"},
+              {title: "Sums and Products", href: "/lvl-1/sums-products"}
+            ]
+          },
+          {
+            title: "Level 2",
+            items: [
+              {title: "Math Functions", href: "/lvl-2/math-functions"}
             ]
           }
         ]

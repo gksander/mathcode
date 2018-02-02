@@ -2,8 +2,9 @@
 	<div>
 		<pre
 			:class="{'is-active': $store.state.eID == editorID}"
+			class="prettyprint lang-js linenums desert"
 			@click="changeCode()"
-		><slot></slot></pre>
+		><code><slot></slot></code></pre>
 	</div>
 </template>
 
@@ -31,17 +32,17 @@
 
 <style lang="sass" scoped>
 	pre
-		color: white
+		// color: white
 		cursor: pointer
 		margin-bottom: 1em
-		background-color: #202020
-		padding: 10px
+		// background-color: #202020
+		padding: 12px
 		border-radius: 5px
 		tab-size: 2
+		transition: box-shadow 400ms
 		&.is-active
-			// border-width: 3px
-			color: #55e555
-		&:hover:not(.is-active)
-			color: #5fdeed
+			// border-width: 2px
+			// border-color: #358435
+			box-shadow: 0px 0px 7px black
 
 </style>

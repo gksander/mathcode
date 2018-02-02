@@ -193,11 +193,11 @@
       let int = setInterval(() => {
         try {
           this.editor = ace.edit(this.$refs.editor);
-          this.editor.setTheme("ace/theme/monokai");
-          // this.editor.setTheme("ace/theme/cobalt");
+          this.editor.setTheme("ace/theme/chrome");
+          // this.editor.setTheme("ace/theme/monokai");
           this.editor.session.setMode("ace/mode/javascript");
           this.editor.getSession().setTabSize(2);
-          this.$refs.editor.style.fontSize = "16px";
+          this.$refs.editor.style.fontSize = "15px";
           this.editor.$blockScrolling = Infinity;
 
           this.editor.commands.addCommand({
@@ -260,6 +260,12 @@
   #particles-js
     background: radial-gradient(circle, $primary 50%, darken($primary,10%), darken($primary,15%))
     z-index: -2
+
+  // Added styles for code-prettify
+  li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9
+    list-style-type: decimal !important
+  .content pre ol
+    margin-top: 0px !important
   
   // Variables for layout
   $sb-width: 450px
@@ -283,6 +289,7 @@
       padding-left: 8px
       span:first-child
         color: $primary
+        font-weight: bold
     .outputTitle
       text-align: center
       border-bottom: 2px solid $grey-dark
