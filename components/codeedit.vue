@@ -32,17 +32,13 @@
 
 <style lang="sass" scoped>
 	pre
-		// color: white
 		cursor: pointer
 		margin-bottom: 1em
-		// background-color: #202020
-		padding: 12px
+		padding: 15px
 		border-radius: 5px
 		tab-size: 2
 		transition: box-shadow 400ms
 		&.is-active
-			// border-width: 2px
-			// border-color: #358435
 			box-shadow: 0px 0px 7px black
 
 </style>

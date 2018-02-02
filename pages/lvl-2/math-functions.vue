@@ -56,8 +56,24 @@ print( f(a) );</codeedit>
 print( h(2) );
 print( h(3.5) );</codeedit>
 		<p>
-			As we'll see in later pages, this flexibility gives us a <em>ton</em> of power!
+			In line (1) we accept a value of <code>x</code>. Line (2) then doubles that value of <code>x</code> and puts that value in a variable, and then line (3) adds 5 to that value. Line (5) then returns this final value.
 		</p>
+		<p>
+			As we'll see in later pages, this flexibility of programming functions gives us a <em>ton</em> of power! 
+		</p>
+
+		<p class="activities-title">Activities</p>
+		<p class="title">Activity: Defining a function given a formula</p>
+		<p>
+			Use the editor below to define a programming function to represent the math function \( f(x) = \frac{x}{3}\), which takes a value of \(x\) and returns \(x\) divided by 3. Once you have defined the function, check to make sure that your function gives you \(f(12) = 4\).
+		</p>
+		<codeedit editorID="lvl-2/functions/activity-define-xover3">print("Your code here.");</codeedit>
+
+		<p class="title">Activity: Defining a useful function</p>
+		<p>
+			Suppose John is always 1.15 times as tall as Taylor. Define a math function \(h\) that inputs Taylor's height in inches, \(x\), and outputs John's height in inches, \(f(x)\). Once you have done this, use the editor below to make a programming version of this function. Then, use this function to determine how tall John is when Taylor is 63.42 inches tall.
+		</p>
+		<codeedit editorID="lvl-2/functions/activity-define-wordedFunction">print("Your code here");</codeedit>
 		
 
 	</div>

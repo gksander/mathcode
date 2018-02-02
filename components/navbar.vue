@@ -65,7 +65,8 @@
           {
             title: "Level 2",
             items: [
-              {title: "Math Functions", href: "/lvl-2/math-functions"}
+              {title: "Math Functions", href: "/lvl-2/math-functions"},
+              {title: "Piecewise Functions", href: "/lvl-2/piecewise-functions"},
             ]
           }
         ]
