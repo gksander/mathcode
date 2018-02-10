@@ -36,6 +36,10 @@ module.exports = {
   router: {
     linkActiveClass: "is-active"
   },
+
+  css: [
+    '~/assets/styles/main.sass'
+  ],
   /*
   ** Build configuration
   */

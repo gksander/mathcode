@@ -1,0 +1,112 @@
+@import "../../node_modules/bulma/sass/utilities/initial-variables"
+@import "../../node_modules/bulma/sass/utilities/functions"
+
+$primary: #5d3f9e
+$blue: $primary
+$tabs-border-bottom-width: 3px
+
+@import "../../node_modules/bulma/bulma"
+@import "../../node_modules/bulma/sass/components/navbar.sass"
+
+body, html
+  font-family: 'Merriweather', serif
+  font-size: 15px
+  // overflow-y: hidden
+
+.content
+  p.title
+    margin-bottom: 8px !important
+    border-bottom: 2px solid $grey-dark
+    padding-top: 15px
+  .activities-title
+    background-color: $primary
+    padding: 20px
+    color: white
+    font-size: 2.3em
+    margin-left: -25px
+    padding-left: 25px
+
+#banner
+  background: none
+#particles-js
+  background: radial-gradient(circle, $primary 50%, darken($primary,10%), darken($primary,15%))
+  z-index: -2
+
+// Added styles for code-prettify
+li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9
+  list-style-type: decimal !important
+.content pre ol
+  margin-top: 0px !important
+
+// Variables for layout
+$sb-width: 450px
+$header-height: 48.75px
+$breakwidth: $sb-width + 450px
+
+#sidebar
+  position: fixed
+  top: $header-height
+  bottom: 0
+  right: -$sb-width - 40px
+  width: $sb-width
+  max-width: 85%
+  z-index: 2
+  overflow-y: auto
+  background-color: white
+  transition: right 500ms
+  &.editorShown
+    right: 0px
+  .output-line
+    padding-left: 8px
+    span:first-child
+      color: $primary
+      font-weight: bold
+  .outputTitle
+    text-align: center
+    border-bottom: 2px solid $grey-dark
+    margin-bottom: 10px
+    margin-top: 8px
+
+#content
+  z-index: -4
+  margin-top: $header-height
+  transition: margin-right 500ms
+  &.editorShown
+    margin-right: $sb-width
+
+// Responsiveness
+@media screen and (max-width: $breakwidth)
+  #sidebar
+    box-shadow: -2px 0px 5px black
+  #content
+    margin-right: 0px
+    &.editorShown
+      margin-right: 0px
+
+
+// Badges
+@mixin badge($size)
+    background-color: rgba(255,255,255, 1)
+    width: $size
+    height: $size
+    overflow-x: visible
+    display: flex
+    align-items: center
+    justify-content: center
+    margin: auto
+    border-radius: 100%
+    border: 1px solid rgb(220,220,220)
+    box-shadow: 0px 0px 8px black
+    img
+        width: 88%
+.home-badge
+    @include badge(100px)
+    margin-bottom: 20px
+.banner-badge
+    @include badge(80px)
+    margin-bottom: 8px
+
+.red
+  color: red
+.blue
+  color: blue

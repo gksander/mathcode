@@ -31,8 +31,6 @@ Level 1:
 	- Percentages
 
 Level 2:
-	- Math Functions
-	- Piecewise Functions
 	- Constant Rate of Change
 	- Average Rate of Change
 	- Exponential Growth

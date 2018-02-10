@@ -34,7 +34,7 @@
 	pre
 		cursor: pointer
 		margin-bottom: 1em
-		padding: 15px
+		// padding: 15px
 		border-radius: 5px
 		tab-size: 2
 		transition: box-shadow 400ms
